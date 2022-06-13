@@ -1,0 +1,319 @@
+/*-------------GOOGLE FONT----------------*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/*Variables*/
+:root{
+   /* COLORES:*/
+
+    --first-color: hsl(354, 78%, 60%);
+    --button-color: hsl(0, 0%, 17%);
+    --button-color-alt: hsl(0, 0%, 21%);
+    --card-color: hsl(0, 0%, 90%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --body-color: hsl(206, 4%, 97%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 94%);
+
+
+}
+
+/*Reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;;
+    background-color: var(--body-color);
+    color: var(--title-color);
+}
+body.dark-theme{
+    /*COLORES DARK MODE:*/
+    --first-color: hsl(182, 53%, 74%);
+    --button-color: hsl(246, 16%, 12%);
+    --button-color-alt: hsl(0, 0%, 28%);
+    --card-color: hsla(246, 16%, 5%, .5);
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 75%);
+    --body-color: hsl(249, 19%, 14%);
+    --container-color: hsl(246, 16%, 12%);
+    --border-color: hsl(0, 0%, 20%);
+}
+
+/*configuraciones a la pagina*/
+
+/*card1*/
+
+.logo > img{
+    position: fixed;
+    top: 10px;
+    width: 50px;
+    
+    
+}
+
+.store{
+    position: fixed;
+    left: 80px;
+}
+
+.card1    {
+    padding: 0.5rem;
+}
+
+
+
+/*card2*/
+
+.card2    {
+    padding: 0.5rem;
+}
+
+/*para que se  mire el carrito*/
+.cart-overlay{
+    width: 100vw;
+    min-width: 100vh;
+    height: 100%;
+    background-color: var(--body-color);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 50;
+}
+.cart-overlay.mostrar{
+    display: block;
+}
+
+.bx{ /* icono de X*/
+    position: fixed;
+    z-index: 50;
+    color: var(--first-color);
+    left: 440px;
+}
+
+
+.h5-titulo{
+   color: var(--title-color);
+   font-size: 16px;
+   position: fixed;
+   top: 10px;
+   right: 210px; 
+   padding: 0.5rem;
+}
+.h5-parrafo{
+   color: var(--title-color);
+   font-size: 16px;
+   position: fixed;
+   padding: 0.5rem;
+   right: 60px;
+   
+}
+
+
+/*card3*/
+
+.card3    {
+    padding: 0.5rem;
+}
+/*card4*/
+
+.card4    {
+    padding: 0.5rem;
+}
+
+
+/*loader*/
+/*.loader{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--container-color);
+    top: 0;
+    left: 0;
+    z-index: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.loader img{
+    width: 10%;
+    position: relative;
+    animation: movimientoLoader 4s linear infinite ;
+}
+
+@keyframes movimientoLoader{
+    0%{
+        top: 0;
+    }
+    35%{
+        top: -10px;
+    }
+    70%{
+        top: 10px;
+    }
+    100%{
+        top:0; 
+    }
+}*/
+
+.iconos{
+    position: fixed;
+    left: 380px;
+    
+}
+
+.cart-count{ /*imagen carrito de compras*/
+    width: 1rem;
+    height: 1rem;
+    font-size: 10px;
+    background-color: var(--title-color);
+    color: var(--body-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: .25rem;
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+}
+
+.bag{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: -2px;
+}    
+
+
+.producto-img img{
+    background-color: var(--first-color);
+}
+nav .scroll-nav{
+    background-color:var(--container-color) ;
+}
+
+/******************************/
+/*menu hamburguesa*/
+.navbar{
+    
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1.5rem;
+    height: 60px;   /*Esta se le dio para que el menu hamburguesa no se pierda */
+    cursor: pointer;
+    
+}
+.img-menu {
+    /*position: relative;*/
+    position: fixed;
+    display: block;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+}
+
+input#menu-hamburguesa{
+    visibility: hidden;
+}
+
+input#menu-hamburguesa ~ ul{     /* ~ este significa que es hermana del menu este se saca con alt + 126 ~*/
+    background-color: var(--container-color);
+    list-style: none;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    height: calc(100vh - 60px); /*aqui colocamos los 60px que le dimos en la navbar al heigt para que haga el calculo*/
+    top: 0px; /*Con este le doy la altura a la tarjeta*/
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+}
+/*Psudo clase  cheked para activar o desactivar el menu-hamburguesaa*/
+input#menu-hamburguesa:checked ~ ul{
+    display: flex;
+}
+
+.lista-menu > a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+span{
+    color: var(--first-color); 
+    
+}
+
+
+/*Finnn menu Hamburguesa*/
+/***************************************/
+
+/*Scroll de menu */
+.scroll{
+    background-color: var(--card-color);
+    height: 100px;
+}
+
+.navbar.active{
+    background-color: pink;
+}
+
+
+
+/**********************************/
+/*Media query*/
+
+@media screen and (min-width: 540px) {
+    
+    /*menu hamburguesa*/
+    label{
+        display: none;
+    }
+    input#menu-hamburguesa ~ ul{
+        position: static;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: flex-start;
+    }
+    .store{
+        position: fixed;
+        
+    }
+    .iconos{
+        position: fixed;
+       right: 50px;
+        display:flex;
+        justify-content: flex-end;
+    }
+
+    .bag{
+        width: 25px;
+        height: 25px;
+        position: relative;
+        top: 4px;
+    }    
+   .home-card1{
+    position: fixed;
+    top: 30px;
+    left: 200px;
+   }
+   .producto-card1{
+    position: fixed;
+    top: 30px;
+    left: 280px;
+   }
+
+}
