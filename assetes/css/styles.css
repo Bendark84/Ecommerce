@@ -121,9 +121,9 @@ body.dark-theme{
     padding: 0.5rem;
 }
 
-.img-card{
+/* .img-card{
     
-}
+} */
 .img-card img{
     width: 250px;
     background-color: var(--text-color-light);
