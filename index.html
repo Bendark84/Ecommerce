@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>
-            <section class="card1">
+            <section class="card1" id="card1">
                 
 
                    <nav class="navbar">
@@ -37,15 +37,15 @@
                     <!-- --------------------- -->
                     
                     <ul class="lista-menu">                        
-                       <a href=""> <li> <span class="home-card1"> Home</span> </li></a>
-                       <a href=""> <li class="producto-card1">Products</li></a>
+                       <a href="#card1"> <li> <span class="home-card1"> Home</span> </li></a>
+                       <a href="#card2"> <li class="producto-card1">Products</li></a>
                     </ul>
                     <div class="iconos">
 
                         <img src="./assetes/imagenes/moon.png " id="theme-toggler" alt="">
                         
                         <img class="bag" id="img-bag" src="./assetes/imagenes/shopping-bag.png" alt="">
-                        <p class="cart-count">0</p>
+                        <p class="cart-count" id="cart-count">0</p>
                        <!-- <img src="./assetes/imagenes/sun.png" alt=""> -->
     
                     </div>
@@ -54,8 +54,12 @@
 
                     
                     <div class="botones"><br> 
-                        <button>Discover</button>
-                        <button>ADD TO CART</button>
+
+                        <a href="" class="boton-discover">Discover</a>
+                        <a href="" class="boton-add">ADD TO CART</a>
+
+                       <!-- <button class="boton-discover">Discover</button> 
+                       <button class="boton-add">ADD TO CART</button>  -->
                         
                     </div>
                     <h2><Span>$14.00</Span></h2><br>
@@ -83,15 +87,16 @@
 <!----------------------------------------------------------------------------------->
 
     <aside>
-            <section class="card2">
+            <section class="card2" id="card2">
                 
                 <div class="cart-overlay">
-                    <img src="./assetes/imagenes/empty-cart.png" alt=""> 
                     <i  id="cart-close" class='bx bx-x bx-lg'></i>
-                  <div class="cart-list"> 
-                    <div class="titulo-card2"></div>
-                        <h5 class="h5-titulo">My Cart</h5>
-                        <h5 class="h5-parrafo">Aun no has agregado ningun producto a tu carrito</h5>
+                    <div class="cart-list"> 
+                        <div class="empty-state">
+                            <img id="cart-img" src="./assetes/imagenes/empty-cart.png" alt=""> 
+                            <h5 class="h5-titulo">My Cart</h5>
+                            <h5 class="h5-parrafo">Aun no has agregado ningun producto a tu carrito</h5>
+                        </div>
                     </div>
                 </div>    
             
@@ -130,11 +135,14 @@
                 </div>
 
             </div>
+           
 
+            
             <div class="img-card">
+                
                 <!-- <div class="hoodies-1">
                     <img src="./assetes/imagenes/featured1.png" alt="">
-                    <button class="botonMas-1">+</button>
+                    <button data-id="1" class="botonMas-1 btn-primary">+</button>
                     <p>$14.00 | Stock:10 <br>Hoodies </p>
                 </div>   
 
@@ -148,7 +156,7 @@
                     <img src="./assetes/imagenes/featured3.png" alt="">
                     <button class="botonMas-3">+</button>
                     <p>$14.00 | Stock:10 <br>Hoodies </p>
-                </div>   --> 
+                </div>    -->
 
             </div> 
 

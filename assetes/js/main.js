@@ -26,14 +26,14 @@ const items = [
       category: 'sweatshirts',
       quantity: 20
     },
-    {
-      id: 4,
-      name: 'Sweatshirts',
-      price: 30.00,
-      image: 'https://academlo-store.netlify.app/assets/img/featured3.png',
-      category: 'sweatshirts',
-      quantity: 10
-    }
+    // {
+    //   id: 4,
+    //   name: 'Sweatshirts',
+    //   price: 30.00,
+    //   image: 'https://academlo-store.netlify.app/assets/img/featured3.png',
+    //   category: 'sweatshirts',
+    //   quantity: 10
+    // }
 ]
 
 //variables
@@ -46,7 +46,7 @@ let cartClose = document.querySelector("#cart-close") /* carrito de compras / pa
 
 let listProducts = document.querySelector(".img-card") /* este es donde esta la ropa */
 let cartContainer = document.querySelector(".cart-list")
-let cartCount = document.querySelector(".cart-count")
+let cartCount = document.querySelector("#cart-count")
 let cart= []
 
 /*Callback para mostrar el evento  */
@@ -72,6 +72,7 @@ cartClose.addEventListener("click", () =>{
 
 /*----------------------MOSTRAR PRODUCTO----------------------------------------------- */
 
+
 function mostrarProductos(){
 
     let fragmentHTML = ""
@@ -80,8 +81,8 @@ function mostrarProductos(){
         fragmentHTML += `
                 <div class="hoodies-1" >
                     <img src=${product.image} alt="">
-                    <button data-id="${product.id}" class="botonMas-1">+</button>
-                    <p>$${product.price}| Stock:10 <br>Hoodies </p>
+                    <button data-id="${product.id}" class="product-button" >+</button>
+                    <p class="info-cart">  <span> $${product.price} </span> | <small>Stock:${product.quantity} <br>${product.category} </p> </small> <br>
                 </div>   
         
         `
@@ -91,21 +92,21 @@ function mostrarProductos(){
 
 
     /* trar productos  */
-    let productsButton = document.querySelectorAll(".botonMas-1")
+    let productsButton = document.querySelectorAll(".product-button")
 
-    productsButton.forEach((button) =>{
+    
+    productsButton.forEach( (btn) =>{
+        btn.addEventListener( "click", () => {
+            let id = parseInt(btn.getAttribute("data-id"))
+            let product = items.find( item => item.id === id )
 
-        button.addEventListener("click",(evento) =>{
-            const id = parseInt(button.getAttribute("data-id"))
-            const product = items.find(item => { 
-            return item.id === id
+            agregarProducto(product)
         })
-
-        agregarProducto(product)
     })
+}
 
- })  
-
+function nuevoProducto(){
+    console.log("nuevo producto")
 }
 
 
@@ -114,7 +115,7 @@ function mostrarProductos(){
 
 
 function agregarProducto( producto ){
-
+ 
     let resultadoFind = cart.find( item => item.id === producto.id )
     //resultadoFind = "actualizacion"
 
@@ -136,6 +137,7 @@ function agregarProducto( producto ){
         cart.push(producto)
     }
 
+    console.log(cart)
      
      mostrarProductosCart()
 }
@@ -183,18 +185,18 @@ function mostrarProductosCart(){
 /*para hacer un scroll de mi navbar */
 
 const nav = document.querySelector("nav");
-/*window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function(){
     nav.classList.toggle('active', window.scrollY >0 )
-}) otro metodo para hacerlo lo del scroll*/
+}) /*otro metodo para hacerlo lo del scroll*/
 
-window.addEventListener("scroll", () =>{
-    if(window.scrollY > 60){
-        nav.classList.add("scroll-nav")
-    }else{
-        nav.classList.remove("scroll-nav")
-    }
+// window.addEventListener("scroll", () =>{
+//     if(window.scrollY > 50){
+//         nav.classList.add("scroll-nav")
+//     }else{
+//         nav.classList.remove("scroll-nav")
+//     }
 
-})
+// })
 
 
 /*----------------------DARK MODE----------------------------------------------- */
@@ -211,11 +213,11 @@ themeIcon.addEventListener("click", (e) =>{
     body.classList.toggle("dark-theme")
     /* para cambiar la imagen cuando pasa a modo obscuro */
     let isDark = body.classList.contains("dark-theme")
-    if(isDark){
-        themeIcon.classList.replace(pic="./assetes/imagenes/moon.png", pic="./assetes/imagenes/sun.png")
-    }else{
-        themeIcon.classList.replace(pic="./assetes/imagenes/sun.png", pic="./assetes/imagenes/moon.png")
-    }
+    // if(isDark){
+    //     themeIcon.classList.replace(pic="./assetes/imagenes/moon.png", pic="./assetes/imagenes/sun.png")
+    // }else{
+    //     themeIcon.classList.replace(pic="./assetes/imagenes/sun.png", pic="./assetes/imagenes/moon.png")
+    // }
  
 
 })
