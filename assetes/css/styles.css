@@ -52,9 +52,20 @@ body.dark-theme{
     position: fixed;
     top: 10px;
     width: 50px;
-    
+      
     
 }
+
+.section-home{
+    background-color: transparent;
+    min-height: 100vh;
+    padding: 4.5rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+
+
 
 .store{
     position: fixed;
@@ -117,22 +128,70 @@ body.dark-theme{
 
 /*card3*/
 
+
 .card3    {
     padding: 0.5rem;
+    position: relative;
+    align-items: center;
+    left: 100px;
+    z-index: -1;
 }
 
-/* .img-card{
+.opciones{
+    position:static ;
     
-} */
+}
+div .showAll{
+    position: relative;
+    right: 210px;
+    text-align: center;
+    
+}
+.hoodies{
+    position: relative;
+    right: -10px;
+    top: -40px;
+    text-align: center;
+}
+.shirt{
+
+    position: relative;
+    right: 215px;    
+    text-align: center;
+
+}
+.sweatshirts{
+    position: relative;
+    right: -10px;
+    top: -40px;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+.img-card{
+
+    display: block;
+
+
+}
 .img-card img{
     width: 250px;
-    background-color: var(--text-color-light);
+    background-color: lightgrey;
 }
 .img-card button{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    font-size: 36px;  
+    font-size: 36px;
+    position: relative;
+    right: 40px;
+    border-color: none;  
     
 }
 
@@ -152,8 +211,21 @@ body.dark-theme{
 
 .card4    {
     padding: 0.5rem;
+    background-color: lightgrey;
+    border-radius: 50px 0 0 0;
+    text-align: center;
 }
 
+.infoGeneral{
+    padding: 0.5rem;
+    position: relative;
+    right: -10px;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
 
 /*loader*/
 /*.loader{
@@ -193,7 +265,7 @@ body.dark-theme{
 
 .iconos{
     position: fixed;
-    left: 380px;
+    left: 310px;
     
 }
 
@@ -220,10 +292,43 @@ body.dark-theme{
     top: -2px;
 }    
 
+.home-img{
+    width: 400px;
+    height: 450px;
+    background-color: transparent;
+}
+
+.producto-img {
+    background-color: var(--first-color);
+    width: 60%;
+    max-width: 350px;
+    position: absolute;
+    right: 0;
+    top: -4.5rem;
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    border-radius: 0px 0px 50px;
+}
 
 .producto-img img{
-    background-color: var(--first-color);
+    width: 270px;
+    height: 270px;
+    object-fit: contain;
 }
+
+.botones{
+    background-color: gray;
+    
+}
+
+
+
+
+
+
 nav .scroll-nav{
     background-color:var(--container-color) ;
 }
@@ -302,6 +407,10 @@ span{
 /**********************************/
 /*Media query*/
 
+
+
+
+
 @media screen and (min-width: 540px) {
     
     /*menu hamburguesa*/
@@ -337,11 +446,36 @@ span{
     position: fixed;
     top: 30px;
     left: 200px;
+    
+    
    }
    .producto-card1{
     position: fixed;
     top: 30px;
     left: 280px;
    }
+
+   .section-home{
+    flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5rem;
+    }
+
+    .producto-img{
+        height: 100vh;
+    }
+
+    .img-card{
+
+        display: flex;
+        align-items: center;   
+    }
+
+    .opciones{
+        display: flex;
+        
+        
+    }
 
 }
