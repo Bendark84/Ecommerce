@@ -1,6 +1,12 @@
 
 "use strict"
 
+/* carrito de compras */
+let contadorMas = 0
+window.localStorage.setItem()
+
+
+
 
 /*para hacer un scroll de mi navbar */
 
