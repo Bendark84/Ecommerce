@@ -134,7 +134,7 @@ body.dark-theme{
     position: relative;
     align-items: center;
     left: 100px;
-    z-index: -1;
+    z-index: 100;
 }
 
 .opciones{
@@ -167,11 +167,6 @@ div .showAll{
     text-align: center;
 
 }
-
-
-
-
-
 
 .img-card{
     
@@ -207,6 +202,9 @@ div .showAll{
     z-index: -1;
 }
 
+.cart-item img{
+    width: 100px;
+}
 
 
 /* .hoodies-1 img{

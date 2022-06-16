@@ -25,7 +25,7 @@ const items = [
       image: 'https://academlo-store.netlify.app/assets/img/featured3.png',
       category: 'sweatshirts',
       quantity: 20
-    },
+    }
     // {
     //   id: 4,
     //   name: 'Sweatshirts',
@@ -92,22 +92,27 @@ function mostrarProductos(){
 
 
     /* trar productos  */
+
+   
     let productsButton = document.querySelectorAll(".product-button")
 
     
-    productsButton.forEach( (btn) =>{
-        btn.addEventListener( "click", () => {
-            let id = parseInt(btn.getAttribute("data-id"))
-            let product = items.find( item => item.id === id )
+    productsButton.forEach( (button) =>{
+        button.addEventListener( "click", (evento) => {
+            let id = parseInt(button.getAttribute("data-id"))
+            let product = items.find( item => {
+                return item.id === id 
 
+            })
             agregarProducto(product)
-        })
+        })  
     })
 }
 
-function nuevoProducto(){
-    console.log("nuevo producto")
-}
+// function nuevoProducto(){
+//     console.log("nuevo producto")
+    
+//}
 
 
 
@@ -137,7 +142,7 @@ function agregarProducto( producto ){
         cart.push(producto)
     }
 
-    console.log(cart)
+        console.log(cart)
      
      mostrarProductosCart()
 }
@@ -175,6 +180,9 @@ function mostrarProductosCart(){
     cartContainer.innerHTML = fragmentoHTML
     cartCount.textContent = cantidadTotal
 }
+
+/* Local Storage */
+
 
 
 
