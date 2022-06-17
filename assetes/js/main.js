@@ -47,6 +47,7 @@ let cartClose = document.querySelector("#cart-close") /* carrito de compras / pa
 let listProducts = document.querySelector(".img-card") /* este es donde esta la ropa */
 let cartContainer = document.querySelector(".cart-list")
 let cartCount = document.querySelector("#cart-count")
+let botonDelete = document.querySelector(".botonDelete")
 let cart= []
 let contador = 0
 
@@ -82,6 +83,12 @@ cartIcon.addEventListener("click", () =>{
 cartClose.addEventListener("click", () =>{
     cartOverlay.classList.remove("mostrar")
 })
+
+
+botonDelet.addEventListener("click", () =>{
+    cartOverlay.classList.remove(".botonDelete")
+})
+
 
 
 
@@ -162,11 +169,16 @@ function agregarProducto( producto ){
 
     localStorage.setItem("cart",JSON.stringify(cart))
 
+    cartClose.addEventListener( "click", () =>{
+        cartOverlay.classList.remove("mostrar")
+    })
         
         mostrarProductosCart()
         
     }
 
+
+    
 
 /*----------------------MOSTRAR PRODUCTO CART----------------------------------------------- */
 
@@ -187,9 +199,13 @@ function mostrarProductosCart(){
             <img src=${item.image} alt="">
             <p>${item.name}</p>
             <small>Cantidad: ${item.quantitySelected}</small>
+            <div class="botonesCart">
+            
+        
             <button  class="botonMas">+</button>
             <button>-</button>
-            <button class="buttonDelete">x</button>
+            <button class="botonDelete">x</button>
+            </div>
         </div>
         `     
 
@@ -206,9 +222,7 @@ function mostrarProductosCart(){
     
         <p> Total de Productos  : <br>   ${ cantidadTotal }</p><br>
         <p>$${ suma }</p><br>
-        <div class="botonesCart">
-            
-        </div>
+        
        
     </div>
     ` 
@@ -227,9 +241,6 @@ function mostrarProductosCart(){
 
 
 
-/* Local Storage */
-
-/*window.localStorage*/
 
 
 
