@@ -134,7 +134,7 @@ body.dark-theme{
     position: relative;
     align-items: center;
     left: 100px;
-    z-index: 100;
+    z-index: 20;
 }
 
 .opciones{
@@ -206,11 +206,21 @@ div .showAll{
     width: 100px;
 }
 
+.cart-item{
+    padding: 1rem;
+}
 
-/* .hoodies-1 img{
-    width: 50px;
-} */
+.botonesCart button{
+   border-radius: 50%;
+   width: 20px;
+   height: 20px;
+}
 
+.cart-price{
+    padding: 1rem;
+}
+
+ 
 
 /*card4*/
 
